@@ -33,3 +33,28 @@ All analyses are based on **two-dimensional (2D) images**. Three-dimensional por
   https://imagej.nih.gov/ij/
 
 Both PaddleSeg and ImageJ are open-source software.
+
+
+## Scripts (Brief Description)
+
+- `roi_image_cropper.py`  
+  **Purpose:** Crop a fixed ROI from FE-SEM images.  
+  **Input:** One image path + ROI coordinates (left, top, right, bottom).  
+  **Output:** Cropped image file(s).
+
+- `excel_psd_histogram_plotter.py`  
+  **Purpose:** Plot a log-scale distribution histogram from Excel-exported pore/fracture statistics.  
+  **Input:** `data.xlsx` (user-defined sheet/range).  
+  **Output:** Histogram figure (shown/saved).
+
+- `segmentation_threshold_benchmark.py`  
+  **Purpose:** Compare conventional segmentation strategies and compute area fraction (black-pixel ratio).  
+  **Input:** A folder of grayscale images.  
+  **Output:** Binary masks saved into method-specific folders + a summary `.txt` file.
+
+- `boxcount_fractal_dimension_batch.py`  
+  **Purpose:** Batch compute fractal dimension (FD) using the box-counting method from binary masks.  
+  **Input:** A folder of images (converted to binary using Otsu in the script).  
+  **Output:** `fractal_dimensions.csv`.
+
+> Note: Some scripts contain hard-coded local paths. Please update file paths before running.
